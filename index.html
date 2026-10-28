@@ -56,6 +56,7 @@ p { margin: 0; }
 .now li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); }
 .projects { display: grid; gap: 0; }
 .project { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.project h3 a { color: inherit; text-decoration-color: var(--accent); }
 .project h3 { font-family: var(--display); font-weight: 500; font-size: 1.1875rem; margin: 0; }
 .project p { grid-column: 1 / -1; color: var(--muted); font-size: 1rem; }
 .status { font-family: var(--mono); font-size: .75rem; color: var(--accent); align-self: center; white-space: nowrap; }
@@ -94,25 +95,21 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
     <div class="label"><span>Now</span><span>Updated Oct 2026</span></div>
     <ul class="now">
       <li>Setting up this site and figuring out what belongs on it.</li>
-      <li>Working on a side project I'll write about here soon.</li>
+      <li>Building Ice Breaker and Keyholder (more on both below).</li>
       <li>Enjoying fall weekends with the family.</li>
     </ul>
   </section>
 
   <section id="projects">
-    <div class="label"><span>Projects</span><span>3 listed</span></div>
+    <div class="label"><span>Projects</span><span>2 listed</span></div>
     <div class="projects">
       <article class="project">
-        <h3>Project one</h3><span class="status">In progress</span>
-        <p>A sentence or two about what it is, why I'm building it, and where it's headed.</p>
+        <h3><a href="https://meeticebreaker.com">Ice Breaker</a></h3><span class="status">In progress</span>
+        <p>An iPhone app for meeting people nearby. Check in at a spot, see who else is there, and get an easy way to start a conversation.</p>
       </article>
       <article class="project">
-        <h3>Project two</h3><span class="status">Tinkering</span>
-        <p>Something smaller I'm exploring on nights and weekends.</p>
-      </article>
-      <article class="project">
-        <h3>Project three</h3><span class="status">Shipped</span>
-        <p>A finished thing worth pointing to, with a link once it's live.</p>
+        <h3><a href="https://keyholder-demo.onrender.com/">Keyholder</a></h3><span class="status">Live demo</span>
+        <p>Key-person continuity for small businesses and their IT providers. The person who holds the IT keys writes down what only they know, and if they ever stop answering, a named backup can get read-only access, with every step logged.</p>
       </article>
     </div>
   </section>
