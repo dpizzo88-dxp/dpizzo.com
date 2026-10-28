@@ -41,6 +41,8 @@ body {
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 header { display: grid; gap: 1rem; }
+.intro { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
+.headshot { width: 7.5rem; height: 7.5rem; flex: none; border-radius: 50%; object-fit: cover; object-position: 55% 40%; border: 3px solid var(--surface); }
 .site { font-family: var(--mono); font-size: .8125rem; color: var(--muted); letter-spacing: .02em; }
 h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.4rem, 7vw, 3.5rem); line-height: 1.02; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
 .lede { margin: 0; font-size: 1.1875rem; max-width: 34rem; }
@@ -64,6 +66,8 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
 @media (max-width: 520px) {
   .wrap { padding-block: 2rem 3rem; gap: 2.75rem; }
   .photos { grid-template-columns: 1fr 1fr; }
+  .intro { flex-direction: column-reverse; align-items: flex-start; gap: 1rem; }
+  .headshot { width: 5.5rem; height: 5.5rem; }
   .photo.wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 }
 </style>
@@ -73,7 +77,10 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
 <div class="wrap">
   <header>
     <div class="site">dpizzo.com</div>
-    <h1>Hi, I'm Damian.</h1>
+    <div class="intro">
+      <h1>Hi, I'm Damian.</h1>
+      <img class="headshot" src="damian.jpg" alt="Damian holding his dog" width="480" height="480">
+    </div>
     <p class="lede">This is my small corner of the internet: what I'm building, what I'm learning, and what life at home looks like these days.</p>
     <nav aria-label="Sections">
       <a href="#now">Now</a>
