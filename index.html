@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Damian Pizzo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one narrow left-aligned column, like a well-kept notebook; sections separated by small mono labels. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #e6ebe5;
+  --ink: #1d2a2a;
+  --muted: #5b6b68;
+  --accent: #2f6b5a;
+  --line: #cfd8d2;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a19; --surface: #1d2523; --ink: #e4ebe7; --muted: #94a5a0; --accent: #7cc4ad; --line: #2c3633;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a19; --surface: #1d2523; --ink: #e4ebe7; --muted: #94a5a0; --accent: #7cc4ad; --line: #2c3633;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 42rem; margin: 0 auto; padding-block: 3.5rem 4rem; display: grid; gap: 3.5rem; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+header { display: grid; gap: 1rem; }
+.site { font-family: var(--mono); font-size: .8125rem; color: var(--muted); letter-spacing: .02em; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.4rem, 7vw, 3.5rem); line-height: 1.02; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.lede { margin: 0; font-size: 1.1875rem; max-width: 34rem; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-family: var(--mono); font-size: .875rem; }
+section { display: grid; gap: 1.25rem; }
+.label { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 1.625rem; margin: 0; letter-spacing: -.01em; }
+p { margin: 0; }
+.now { display: grid; gap: .75rem; padding: 0; margin: 0; list-style: none; }
+.now li { padding-left: 1.25rem; position: relative; }
+.now li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent); }
+.projects { display: grid; gap: 0; }
+.project { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.project h3 { font-family: var(--display); font-weight: 500; font-size: 1.1875rem; margin: 0; }
+.project p { grid-column: 1 / -1; color: var(--muted); font-size: 1rem; }
+.status { font-family: var(--mono); font-size: .75rem; color: var(--accent); align-self: center; white-space: nowrap; }
+.photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.photo { aspect-ratio: 4 / 5; max-width: 100%; background: var(--surface); border-radius: 6px; display: flex; align-items: flex-end; padding: .75rem; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+.photo.wide { grid-column: span 2; aspect-ratio: auto; }
+footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+@media (max-width: 520px) {
+  .wrap { padding-block: 2rem 3rem; gap: 2.75rem; }
+  .photos { grid-template-columns: 1fr 1fr; }
+  .photo.wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="site">dpizzo.com</div>
+    <h1>Hi, I'm Damian.</h1>
+    <p class="lede">This is my small corner of the internet: what I'm building, what I'm learning, and what life at home looks like these days.</p>
+    <nav aria-label="Sections">
+      <a href="#now">Now</a>
+      <a href="#projects">Projects</a>
+      <a href="#family">Family</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="now">
+    <div class="label"><span>Now</span><span>Updated Oct 2026</span></div>
+    <ul class="now">
+      <li>Setting up this site and figuring out what belongs on it.</li>
+      <li>Working on a side project I'll write about here soon.</li>
+      <li>Enjoying fall weekends with the family.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="label"><span>Projects</span><span>3 listed</span></div>
+    <div class="projects">
+      <article class="project">
+        <h3>Project one</h3><span class="status">In progress</span>
+        <p>A sentence or two about what it is, why I'm building it, and where it's headed.</p>
+      </article>
+      <article class="project">
+        <h3>Project two</h3><span class="status">Tinkering</span>
+        <p>Something smaller I'm exploring on nights and weekends.</p>
+      </article>
+      <article class="project">
+        <h3>Project three</h3><span class="status">Shipped</span>
+        <p>A finished thing worth pointing to, with a link once it's live.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="family">
+    <div class="label"><span>Family life</span><span>Photos coming</span></div>
+    <p>Most of my best days happen at home. A few snapshots and stories from our family will live here.</p>
+    <div class="photos" aria-label="Photo placeholders">
+      <div class="photo wide">Family photo</div>
+      <div class="photo">Everyday moments</div>
+      <div class="photo">A weekend trip</div>
+      <div class="photo">Holidays</div>
+      <div class="photo">Something funny</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="label"><span>Contact</span></div>
+    <p>The best way to reach me is email: <strong>hello@dpizzo.com</strong></p>
+  </section>
+
+  <footer>
+    <span>© 2026 Damian Pizzo</span>
+    <span>Made by hand, kept simple.</span>
+  </footer>
+</div>
+</body>
+</html>
