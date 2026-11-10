@@ -61,7 +61,8 @@ p { margin: 0; }
 .project p { grid-column: 1 / -1; color: var(--muted); font-size: 1rem; }
 .status { font-family: var(--mono); font-size: .75rem; color: var(--accent); align-self: center; white-space: nowrap; }
 .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
-.photo { aspect-ratio: 4 / 5; max-width: 100%; background: var(--surface); border-radius: 6px; display: flex; align-items: flex-end; padding: .75rem; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+.photo { margin: 0; aspect-ratio: 4 / 5; max-width: 100%; background: var(--surface); border-radius: 6px; overflow: hidden; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .photo.wide { grid-column: span 2; aspect-ratio: auto; }
 footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
 @media (max-width: 520px) {
@@ -69,7 +70,7 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
   .photos { grid-template-columns: 1fr 1fr; }
   .intro { flex-direction: column-reverse; align-items: flex-start; gap: 1rem; }
   .headshot { width: 5.5rem; height: 5.5rem; }
-  .photo.wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .photo.wide { grid-column: 1 / -1; aspect-ratio: 976 / 602; order: -1; }
 }
 </style>
 </head>
@@ -92,10 +93,10 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
   </header>
 
   <section id="now">
-    <div class="label"><span>Now</span><span>Updated Oct 2026</span></div>
+    <div class="label"><span>Now</span><span>Updated Nov 2026</span></div>
     <ul class="now">
       <li>Setting up this site and figuring out what belongs on it.</li>
-      <li>Building Ice Breaker and Keyholder (more on both below).</li>
+      <li>Building Ice Breaker and DXP Vaults (more on both below).</li>
       <li>Enjoying fall weekends with the family.</li>
     </ul>
   </section>
@@ -108,27 +109,27 @@ footer { font-family: var(--mono); font-size: .8125rem; color: var(--muted); dis
         <p>An iPhone app for meeting people nearby. Check in at a spot, see who else is there, and get an easy way to start a conversation.</p>
       </article>
       <article class="project">
-        <h3><a href="https://keyholder-demo.onrender.com/">Keyholder</a></h3><span class="status">Live demo</span>
+        <h3><a href="https://dxpvaults.com">DXP Vaults</a></h3><span class="status">Live demo</span>
         <p>Key-person continuity for small businesses and their IT providers. The person who holds the IT keys writes down what only they know, and if they ever stop answering, a named backup can get read-only access, with every step logged.</p>
       </article>
     </div>
   </section>
 
   <section id="family">
-    <div class="label"><span>Family life</span><span>Photos coming</span></div>
-    <p>Most of my best days happen at home. A few snapshots and stories from our family will live here.</p>
-    <div class="photos" aria-label="Photo placeholders">
-      <div class="photo wide">Family photo</div>
-      <div class="photo">Everyday moments</div>
-      <div class="photo">A weekend trip</div>
-      <div class="photo">Holidays</div>
-      <div class="photo">Something funny</div>
+    <div class="label"><span>Family life</span><span>5 photos</span></div>
+    <p>Most of my best days happen at home. Here are a few snapshots from our family.</p>
+    <div class="photos">
+      <figure class="photo"><img src="photos/dinner-out.jpg" alt="Damian with his son and daughter at dinner outdoors" width="720" height="900" loading="lazy"></figure>
+      <figure class="photo wide"><img src="photos/football.jpg" alt="Damian's son holding a football on the sideline at a game" width="976" height="602" loading="lazy"></figure>
+      <figure class="photo"><img src="photos/surfing-pig.jpg" alt="Damian's daughter and son in front of a beach restaurant sign" width="720" height="900" loading="lazy"></figure>
+      <figure class="photo"><img src="photos/halloween.jpg" alt="Damian's daughter in a pink Halloween costume holding the family dog" width="720" height="900" loading="lazy"></figure>
+      <figure class="photo"><img src="photos/dog-costume.jpg" alt="The family dog in a black cat-ear hoodie" width="720" height="900" loading="lazy"></figure>
     </div>
   </section>
 
   <section id="contact">
     <div class="label"><span>Contact</span></div>
-    <p>The best way to reach me is email: <strong>hello@dpizzo.com</strong></p>
+    <p>The best way to reach me is email: <a href="mailto:damian@dpizzo.com">damian@dpizzo.com</a></p>
   </section>
 
   <footer>
